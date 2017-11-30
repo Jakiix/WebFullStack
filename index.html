@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_gallery.css" />
+</head>
+<body>
+<div class="header">
+    <h1><a href="#">China</a></h1>
+</div>
+
+<div class="row">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="form.html">Subscription</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="col-3 menu">
+        <ul>
+            <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 1</span></li>
+            <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 2</span></li>
+            <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 3</span></li>
+            <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 4</span></li>
+        </ul>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <div class="col-6">
+        <h1>The City</h1>
+        <p>Custodiam et mollius commotus acer commune obiurgatorio Constantii lenitatem post statuas tunc cogitari perferens Montius advocatos vocis sonu quaestor primos.</p>
+    </div>
+
+    <div class="col-3 right">
+        <div class="aside">
+            <h2>What?</h2>
+            <p>Et Ascalonem Neapolim Octaviani principis superior</p>
+            <h2>Where?</h2>
+            <p>Et Ascalonem Neapolim Octaviani principis superior</p>
+            <h2>How?</h2>
+            <p>Et Ascalonem Neapolim Octaviani principis superior</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="pic"></div>
+
+<div class="footer">
+    <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJTU</title>
+</head>
+<body>
+    <form>
+        <h3>RACE REGISTRATION FORM</h3>
+        <a href="index.html">Responsive Gallery</a><br><br>
+
+        <label for="fn">
+            First Name :
+            <input type="text" id="fn" name="firstname" pattern="[a-zA-Z]+" title="Please enter a first name with english characters" placeholder="Enter your first name" required autofocus><br><br>
+        </label>
+
+        <label for="ln">
+            Last Name :
+            <input type="text" id="ln" name="lastname" pattern="[a-zA-Z]+" title="Please enter a last name with english characters" placeholder="Enter your last name" required><br><br>
+        </label>
+
+        <label>
+            Title :
+            <input type="radio" name="gender" value="Mr"> Mr.
+            <input type="radio" name="gender" value="Ms"> Ms.
+            <input type="radio" name="gender" value="Mrs"> Mrs.<br><br>
+        </label>
+
+        <label for="tel">
+            Phone :
+            <input id="tel" type="tel" name="usrtel" placeholder="+86..........."><br><br>
+        </label>
+
+        <label for="birth">
+            Birthday :
+            <input id="birth" type="date" name="bday"><br><br>
+        </label>
+
+        <label for="adress">
+            Complete Postal Mailing Address : <br>
+            <textarea id="adress" rows="4" cols="50" placeholder="Enter your complete adress here..."></textarea><br><br>
+        </label>
+
+        <label>
+            You have a :
+            <input type="checkbox" name="vehicle1" value="Bike"> Bike
+            <input type="checkbox" name="vehicle2" value="Car"> Car
+            <input type="checkbox" name="vehicle2" value="Other"> Other<br><br>
+        </label>
+
+        <label for="child">
+            Number of children :
+            <input id="child" type="number" name="quantity" min="0" max="10"><br><br>
+        </label>
+
+        <label for="color">
+            Select your favorite color :
+            <input id="color" type="color" name="favcolor"><br><br>
+        </label>
+
+        <label for="level">
+            Chinese Level :
+            <input id="level" type="range" name="points" min="0" max="10"><br><br>
+        </label>
+
+        <label for="time">
+            Select a time :
+            <input id="time"  type="time" name="usr_time"><br><br>
+        </label>
+
+        <label for="url">
+            Add your homepage :
+            <input id="url" type="url" name="homepage" pattern="https?://.+" title="Include http://"  placeholder="Your homepage..."><br><br>
+        </label>
+
+        <label for="os">
+            Choose your operating system :
+            <select id="os" name="Operating System">
+                <option value="Windows"> Microsoft Windows</option>
+                <option value="Mac OS">Mac OS</option>
+                <option value="Linux" selected>Linux</option>
+                <option value="other">Other</option>
+            </select><br><br>
+        </label>
+
+        <label for="mail">
+            E-mail :
+            <input type="email" id="mail" name="email" size="50px" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="Enter your email adress here..."><br><br>
+        </label>
+
+        <label for="pw">
+            Password :
+            <input id="pw" type="password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Height or more characters"  placeholder="Enter your password..."><br><br>
+        </label>
+
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
