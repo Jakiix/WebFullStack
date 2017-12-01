@@ -29,6 +29,7 @@ a{
 }
 
 .menu ul {
+    position: fixed;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -125,9 +126,14 @@ img {
     .sidenav a {font-size: 18px;}
 }
 
-#myCanvas2 {
-    position:absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+
+canvas {
+    border : 10px white solid;
+    cursor : pointer;
+    float: left;
+}
+
+.mute {
+    cursor : pointer;
+    display: initial;
 }
