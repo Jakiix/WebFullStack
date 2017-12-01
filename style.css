@@ -1,7 +1,18 @@
-h3{
-    background-color: yellow;
-    width: 300px;
-    margin: 0 auto 5% auto;
+ol{
+    list-style: none;
+    margin: 0;
+    padding :0;
+}
+
+ol li{
+    clear: both;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+label{
+    float: left;
+    width: 250px;
 }
 
 input:focus, textarea:focus, select:focus {

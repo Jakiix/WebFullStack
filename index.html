@@ -3,18 +3,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_gallery.css" />
+    <script src="js/canvas.js"></script>
 </head>
 <body>
 <div class="header">
-    <h1><a href="#">China</a></h1>
+    <a href="#" ><h1>Responsive</h1></a>
 </div>
 
 <div class="row">
-
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="form.html">Subscription</a>
-        <a href="#">Services</a>
+        <a href="#">Canvas</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
@@ -27,18 +27,8 @@
         </ul>
     </div>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-
     <div class="col-6">
-        <h1>The City</h1>
+        <h1>Responsive</h1>
         <p>Custodiam et mollius commotus acer commune obiurgatorio Constantii lenitatem post statuas tunc cogitari perferens Montius advocatos vocis sonu quaestor primos.</p>
     </div>
 
@@ -55,7 +45,16 @@
 
 </div>
 
-<div class="pic"></div>
+<img src="chiot.jpg">
+<br>
+<form>
+    <video  width="300" height="200" src="/avengers.mp4">
+        Your browser does not support the video element.
+    </video>
+    <br />
+
+    <input type="button" onclick="PlayVideo();"  value="Play"/>
+</form>
 
 <div class="footer">
     <p>Resize the browser window to see how the content respond to the resizing.</p>
