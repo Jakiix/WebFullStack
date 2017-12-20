@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div id="main">
+    <header>
+        <div id="main_title">
+            <div id="logo">
+                <img src="logo.png" alt="HealthUp logo" />
+                <h1>Health'Up</h1>
+            </div>
+        </div>
+    </header>
+
+    <div id="mySidenav" class="sideNav">
+        <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Profile</a>
+        <a href="#">Contact</a>
+        <a href="#">Parameters</a>
+    </div>
+    <span id="menu" onclick="openNav()">&#9776; Menu</span>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <section>
+        <div class="center">
+            <form method="post" style="margin: 0 auto; padding-bottom: 3%;">
+                <fieldset id="personal_information">
+                    <legend>Health Information</legend>
+                    <ol>
+                        <li>
+                            <label for="user">User :</label>
+                            <input type="text" id="user" name="user"
+                                   placeholder="Enter your username"
+                                   required
+                                   autofocus>
+                        </li>
+                        <li>
+                            <label for="password">Password : </label>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Enter your password"
+                                   required>
+                        </li>
+                        <li>
+                            <input type="submit" value="Login">
+                        </li>
+                        <li>
+                            <a href="index.html"><input type="submit" value="Subscribe"></a>
+                        </li>
+                    </ol>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        Copyright 2017 - Health'Up
+    </footer>
+</div>
+</body>
+</html>

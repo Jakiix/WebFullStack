@@ -2,126 +2,72 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style_gallery.css" />
-        <script src="js/canvas.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
+
     <body>
-        <div class="header"><a href="#" ><h1>Responsive</h1></a></div>
-        <div class="row">
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="form.html">Subscription</a>
-                <a href="#">Canvas</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+    <div id="main">
+        <header>
+            <div id="main_title">
+                <div id="logo">
+                    <img src="logo.png" alt="HealthUp logo" />
+                    <h1>Health'Up</h1>
+                </div>
             </div>
-            <div class="col-3 menu">
-                <ul>
-                    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 1</span></li>
-                    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 2</span></li>
-                    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 3</span></li>
-                    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Test 4</span></li>
-                </ul>
+        </header>
+
+        <div id="mySidenav" class="sideNav">
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+            <a href="login.html">Profile</a>
+            <a href="#">Contact</a>
+            <a href="#">Parameters</a>
+            <a href="login.html">Log out</a>
+        </div>
+        <span id="menu" onclick="openNav()">&#9776; Menu</span>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+
+        <section>
+            <div class="center">
+                <div class="chart">
+                    <!-- CHART HERE -->
+                </div>
+                <form method="post" style="margin: 0 auto; padding-bottom: 3%;">
+                    <fieldset id="personal_information">
+                        <legend>Login</legend>
+                        <ol>
+                            <li>
+                                <label for="weight">Weight :</label>
+                                <input type="text" id="weight" name="height"
+                                       placeholder="Enter your weight"
+                                       required
+                                       autofocus>
+                            </li>
+                            <li>
+                                <label for="height">Height : </label>
+                                <input type="text" id="height" name="weight"
+                                       placeholder="Enter your height"
+                                       required>
+                            </li>
+                            <li>
+                                <input type="submit" value="Submit">
+                            </li>
+                        </ol>
+                    </fieldset>
+                </form>
             </div>
+        </section>
 
-            <canvas id="myCanvas" width = "532" height ="300" ></canvas><br>
-            <h3><div id = "playPause">Loading content.</div></h3>
-            <div class="mute"></div><br>
-            <script>
-                var mediaSource = "http://video.webmfiles.org/big-buck-bunny_trailer.webm";
-
-                var muted = true;
-                var canvas = document.getElementById("myCanvas");
-                var ctx = canvas.getContext("2d");
-                var videoContainer;
-                var video = document.createElement("video");
-                video.src = mediaSource;
-                video.autoPlay = false;
-                video.loop = true;
-                video.muted = muted;
-                videoContainer = {
-                    video : video,
-                    ready : false
-                };
-                video.onerror = function(){
-                    document.body.removeChild(canvas);
-                    document.body.innerHTML += "<h2>There is a problem loading the video</h2><br>";
-                    document.body.innerHTML += "Users of IE9+ , the browser does not support WebM videos used by this demo";
-                    document.body.innerHTML += "<br><a href='https://tools.google.com/dlpage/webmmf/'> Download IE9+ WebM support</a> from tools.google.com<br> this includes Edge and Windows 10";
-
-                };
-                video.oncanplay = readyToPlayVideo;
-                function readyToPlayVideo(){
-                    videoContainer.scale = Math.min(
-                        canvas.width / this.videoWidth,
-                        canvas.height / this.videoHeight);
-                    videoContainer.ready = true;
-                    requestAnimationFrame(updateCanvas);
-                    document.getElementById("playPause").textContent = "Click video to play/pause.";
-                    document.querySelector(".mute").textContent = "Mute";
-                }
-
-                function updateCanvas(){
-                    ctx.clearRect(0,0,canvas.width,canvas.height);
-                    if(videoContainer !== undefined && videoContainer.ready){
-                        video.muted = muted;
-                        var scale = videoContainer.scale;
-                        var vidH = videoContainer.video.videoHeight;
-                        var vidW = videoContainer.video.videoWidth;
-                        var top = canvas.height / 2 - (vidH /2 ) * scale;
-                        var left = canvas.width / 2 - (vidW /2 ) * scale;
-                        ctx.drawImage(videoContainer.video, left, top, vidW * scale, vidH * scale);
-                        if(videoContainer.video.paused){
-                            drawPayIcon();
-                        }
-                    }
-                    requestAnimationFrame(updateCanvas);
-                }
-
-                function drawPayIcon(){
-                    ctx.fillStyle = "black";
-                    ctx.globalAlpha = 0.5;
-                    ctx.fillRect(0,0,canvas.width,canvas.height);
-                    ctx.fillStyle = "#DDD";
-                    ctx.globalAlpha = 0.75;
-                    ctx.beginPath();
-                    var size = (canvas.height / 2) * 0.5;
-                    ctx.moveTo(canvas.width/2 + size/2, canvas.height / 2);
-                    ctx.lineTo(canvas.width/2 - size/2, canvas.height / 2 + size);
-                    ctx.lineTo(canvas.width/2 - size/2, canvas.height / 2 - size);
-                    ctx.closePath();
-                    ctx.fill();
-                    ctx.globalAlpha = 1;
-                }
-
-                function playPauseClick(){
-                    if(videoContainer !== undefined && videoContainer.ready){
-                        if(videoContainer.video.paused){
-                            videoContainer.video.play();
-                        }else{
-                            videoContainer.video.pause();
-                        }
-                    }
-                }
-
-                function videoMute(){
-                    muted = !muted;
-                    if(muted){
-                        document.querySelector(".mute").textContent = "Mute";
-                    }else{
-                        document.querySelector(".mute").textContent= "Sound on";
-                    }
-                }
-
-                canvas.addEventListener("click",playPauseClick);
-                document.querySelector(".mute").addEventListener("click",videoMute)
-            </script>
-
-
-        </div>
-        <img src="chiot.jpg"><br>
-        <div class="footer">
-            <p>Resize the browser window to see how the content respond to the resizing.</p>
-        </div>
+        <footer>
+            Copyright 2017 - Health'Up
+        </footer>
+    </div>
     </body>
 </html>
