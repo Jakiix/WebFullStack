@@ -10,8 +10,8 @@
         <header>
             <div id="main_title">
                 <div id="logo">
-                    <img src="logo.png" alt="HealthUp logo" />
-                    <h1>Health'Up</h1>
+                    <img src="final.png" alt="HealthUp logo" />
+
                 </div>
             </div>
         </header>
@@ -39,29 +39,17 @@
                 <div class="chart">
                     <!-- CHART HERE -->
                 </div>
-                <form method="post" style="margin: 0 auto; padding-bottom: 3%;">
-                    <fieldset id="personal_information">
-                        <legend>Login</legend>
-                        <ol>
-                            <li>
-                                <label for="weight">Weight :</label>
-                                <input type="text" id="weight" name="height"
-                                       placeholder="Enter your weight"
-                                       required
-                                       autofocus>
-                            </li>
-                            <li>
-                                <label for="height">Height : </label>
-                                <input type="text" id="height" name="weight"
-                                       placeholder="Enter your height"
-                                       required>
-                            </li>
-                            <li>
-                                <input type="submit" value="Submit">
-                            </li>
-                        </ol>
-                    </fieldset>
-                </form>
+                <div id="form">
+                    <form action="#">
+                        <label for="height">Height</label>
+                        <input type="text" id="height" name="height" placeholder="Your height.." autofocus>
+
+                        <label for="weight">Last Name</label>
+                        <input type="text" id="weight" name="weight" placeholder="Your weight..">
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </section>
 
